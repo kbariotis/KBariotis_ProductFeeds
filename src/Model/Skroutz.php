@@ -10,6 +10,8 @@ class KBariotis_ProductFeeds_Model_Skroutz
         $productsCollection = $helper->getProductCollection();
 
         $storeName = $helper->getStoreName();
+        $storeName = htmlspecialchars($storeName);
+        $storeName = Mage::getModel('catalog/product_url')->formatUrlKey($storeName);
 
         $output =
             new SimpleXMLElement("<?xml version='1.0' encoding='UTF-8'?><{$storeName}></{$storeName}>");

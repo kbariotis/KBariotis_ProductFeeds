@@ -12,7 +12,7 @@ class KBariotis_ProductFeeds_Model_Snif
         $output = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><store></store>');
 
         $output->addChild('created_at', date('Y-m-d H:i'));
-        
+
         /* <products> node */
         $productsXml = $output->addChild('products');
 
