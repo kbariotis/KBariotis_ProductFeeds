@@ -45,6 +45,7 @@
             <general>
                 <path>/feeds</path>
                 <frequency>0 0 * * *</frequency>
+                <shipping_cost>0</shipping_cost>
             </general>
         </productfeeds>
     </default>

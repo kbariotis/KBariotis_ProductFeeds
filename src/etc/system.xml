@@ -37,6 +37,12 @@
                             <comment>Use Crontab Format (Eg. "*/5 * * * *" for every 5 minutes)</comment>
                             <show_in_default>1</show_in_default>
                         </frequency>
+                        <shipping_cost translate="label comment">
+                            <label>Fixed Shipping Costs (0 for free)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </shipping_cost>
                     </fields>
                 </general>
                 <skroutz translate="label">

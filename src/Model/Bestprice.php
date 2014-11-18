@@ -18,8 +18,6 @@ class KBariotis_ProductFeeds_Model_Bestprice
 
             $productXml->addChild('productId', $product->getSku());
 
-//            $brand = $product->getAttributeText("brand") . " ";
-
             $helper->addCData(
                    $productXml->addChild('title'),
                    $product->getName()
@@ -60,11 +58,13 @@ class KBariotis_ProductFeeds_Model_Bestprice
             /* <manufacturer> node */
             $helper->addCData($productXml->addChild('brand'), $product->getAttributeText('manufacturer'));
 
-            $productXml->addChild('shipping', '1.0');
+            $shippingCosts = Mage::getStoreConfig('productfeeds/general/shipping_cost');
+            $productXml->addChild('shipping', $shippingCosts);
 
             $qty = (int)Mage::getModel('cataloginventory/stock_item')
                             ->loadByProduct($product)
                             ->getQty();
+
 
             /* <stock> node */
             if ($qty > 0) {

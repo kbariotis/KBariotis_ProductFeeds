@@ -82,7 +82,8 @@ class KBariotis_ProductFeeds_Model_Skroutz
             }
 
             /* <shipping type="" currency=""> node */
-            $shippingXml = $productXml->addChild('shipping', '1.00');
+            $shippingCosts = Mage::getStoreConfig('productfeeds/general/shipping_cost');
+            $shippingXml = $productXml->addChild('shipping', $shippingCosts);
             $shippingXml->addAttribute('type', 'accurate');
             $shippingXml->addAttribute('currency', 'euro');
 
